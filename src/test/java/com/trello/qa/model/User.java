@@ -10,17 +10,16 @@ public class User {
 
     public User setEmail(String email) {
         this.email = email;
-        return this;
+        return  this;
     }
 
     public String getPassword() {
         return password;
-
     }
 
     public User setPassword(String password) {
         this.password = password;
-        return this;
+        return  this;
     }
 }
 
