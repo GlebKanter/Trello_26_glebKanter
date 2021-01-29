@@ -3,9 +3,13 @@ package com.trello.qa.frameWork;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelperBase {
 
@@ -40,7 +44,12 @@ public class HelperBase {
             wd.findElement(locator).sendKeys(text);
         }
     }
-
+public void waitUntilPresent(){
+    new WebDriverWait(wd, 10)
+            .until(ExpectedConditions
+                    .presenceOfElementLocated(By
+                            .xpath("//div[@class='sc-cLQEGU dyjNby']")));
+}
 
     public void attachPhoto(By locator, File file) throws IOException {
         if (file != null) {
@@ -48,7 +57,12 @@ public class HelperBase {
         }
     }
 
+    public void switchToWindowHandle(int index) {
 
+        List<String> tabs = new ArrayList<>(wd.getWindowHandles());
+        if(tabs != null && tabs.size()>index &&index>=0)
+        wd.switchTo().window(tabs.get(index));
+    }
     public void pause(int millis) throws InterruptedException {
         Thread.sleep(millis);
     }
