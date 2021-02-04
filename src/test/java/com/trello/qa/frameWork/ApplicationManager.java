@@ -13,10 +13,13 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager extends HelperBase {
     Properties properties;
-
+    BoardHelper boardHelper;
+    UserHelper userHelper;
     WebDriver wd;
 
-    UserHelper userHelper;
+    public BoardHelper board() {
+        return boardHelper;
+    }
 
     public UserHelper user() {
         return userHelper;
@@ -33,7 +36,7 @@ public class ApplicationManager extends HelperBase {
         wd.manage().window().maximize();//растянет окно на весь экран
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//ожидание появления объекта
         userHelper = new UserHelper(wd);
-
+        boardHelper = new BoardHelper(wd);
 
     }
 
@@ -41,7 +44,6 @@ public class ApplicationManager extends HelperBase {
     public String setEmail() {
         return properties.getProperty("web.email");
     }
-
 
     public String setPassword() {
         return properties.getProperty("web.password");

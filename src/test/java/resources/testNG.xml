@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests">
+    <test name="BoardTest">
+        <classes>
+            <class name="com.trello.qa.tests.OperationWithBoard"/>
+
+        </classes>
+    </test>
+</suite>

@@ -1,6 +1,7 @@
 package com.trello.qa.frameWork;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,17 +25,24 @@ public class HelperBase {
         WebDriver wd;
 
     }
-
+    public void backToHome(){
+        click(By.xpath("//a[@aria-label='Back to Home']"));//go to home
+    }
     public void click(By locator) {
         wd.findElement(locator).click();
     }
-
-    public void clickOnYallaBottom() {
-        click(By.cssSelector("[type='submit']"));
+    public void clickMenuButton(){
+        click(By.xpath("//span[normalize-space()='Show Menu']"));//menu
     }
+
 
     public void clickOnSubmitBottom() {
         click(By.cssSelector("input[value='Submit']"));
+    }
+
+    public void scrollDown(){
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("window.scrollBy(0,300)");
     }
 
     public void type(By locator, String text) {
@@ -57,7 +65,7 @@ public void waitUntilPresent(){
         }
     }
 
-    public void switchToWindowHandle(int index) {
+    public void switchToWindowHandle (int index) throws NullPointerException {
 
         List<String> tabs = new ArrayList<>(wd.getWindowHandles());
         if(tabs != null && tabs.size()>index &&index>=0)
@@ -68,7 +76,7 @@ public void waitUntilPresent(){
     }
 
 
-    public boolean isElementPresent(By locator) {
+    public boolean isElementPresent(By locator)  {
         return wd.findElements(locator).size() > 0;
     }
 
