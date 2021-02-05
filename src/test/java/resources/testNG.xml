@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Tests">
-    <test name="board">
+    <test name="regression">
         <classes>
 
+            <class name="com.trello.qa.tests.LoginTest"></class>
             <class name="com.trello.qa.tests.OperationWithBoard"></class>
-
+            <class name="com.trello.qa.tests.ChangeAvatar"></class>
         </classes>
     </test>
 </suite>

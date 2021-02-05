@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.trello.qa.tests.ChangeAvatar" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-05T07:16:02" hostname="DESKTOP-I31H4EG" time="20.706">
+  <properties/>
+  <testcase name="testChangeAvatar" classname="com.trello.qa.tests.ChangeAvatar" time="20.706"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}) on port 3001
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Feb 05, 2021 9:15:32 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

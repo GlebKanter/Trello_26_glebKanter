@@ -1,0 +1,18 @@
+com/trello/qa/tests/TestBase.java
+ com.trello.qa.tests.TestBase
+com/trello/qa/frameWork/BoardHelper.java
+ com.trello.qa.frameWork.BoardHelper
+com/trello/qa/frameWork/UserHelper.java
+ com.trello.qa.frameWork.UserHelper
+com/trello/qa/frameWork/ApplicationManager.java
+ com.trello.qa.frameWork.ApplicationManager
+com/trello/qa/model/User.java
+ com.trello.qa.model.User
+com/trello/qa/tests/ChangeAvatar.java
+ com.trello.qa.tests.ChangeAvatar
+com/trello/qa/tests/LoginTest.java
+ com.trello.qa.tests.LoginTest
+com/trello/qa/frameWork/HelperBase.java
+ com.trello.qa.frameWork.HelperBase
+com/trello/qa/tests/OperationWithBoard.java
+ com.trello.qa.tests.OperationWithBoard
