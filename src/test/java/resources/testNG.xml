@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Tests">
-    <test name="BoardTest">
+    <test name="board">
         <classes>
-            <class name="com.trello.qa.tests.OperationWithBoard"/>
+
+            <class name="com.trello.qa.tests.OperationWithBoard"></class>
 
         </classes>
     </test>

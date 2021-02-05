@@ -27,9 +27,10 @@ public class UserHelper extends HelperBase {
 
     public void fillLoginForm(User user) throws InterruptedException {
         type(By.id("user"), user.getEmail());
-        pause(2000);
+
         click(By.id("login"));
-        Thread.sleep(3000);
+       WebDriverWait wait = new WebDriverWait(wd,15);
+       wait.until((ExpectedConditions.presenceOfElementLocated(By.id("form-login"))));
         type(By.id("password"), user.getPassword());
 
     }

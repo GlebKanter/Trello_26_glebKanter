@@ -2,11 +2,11 @@ package com.trello.qa.frameWork;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.io.File;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.sun.javaws.jnl.XMLUtils.getAttribute;
+
 
 public class BoardHelper extends HelperBase {
     public BoardHelper(WebDriver wd) {
@@ -14,9 +14,14 @@ public class BoardHelper extends HelperBase {
     }
 
     public int countBoards() {
-        return wd.findElements(By.xpath("//ul[@class='boards-page-board-section-list']// li")).size();
+        return wd.findElements(By.xpath("//ul[@class='boards-page-board-section-list']/ li/a")).size();
     }
 
+    public void clickCreate(){
+        WebDriverWait wait = new WebDriverWait(wd,15);
+        wait.until((ExpectedConditions.presenceOfElementLocated(By.xpath("//span[normalize-space()='Create board']"))));
+        click(By.xpath("//span[normalize-space()='Create board']"));
+    }
     public void clickBoard(String test) {
         String str = String.format("//div[contains(@title,'%s')][@class='board-tile-details-name']", test);
         System.out.println("xpath: (" + str + ")");

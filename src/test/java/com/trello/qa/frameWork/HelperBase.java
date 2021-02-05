@@ -25,13 +25,16 @@ public class HelperBase {
         WebDriver wd;
 
     }
-    public void backToHome(){
+
+    public void backToHome() {
         click(By.xpath("//a[@aria-label='Back to Home']"));//go to home
     }
+
     public void click(By locator) {
         wd.findElement(locator).click();
     }
-    public void clickMenuButton(){
+
+    public void clickMenuButton() {
         click(By.xpath("//span[normalize-space()='Show Menu']"));//menu
     }
 
@@ -40,7 +43,7 @@ public class HelperBase {
         click(By.cssSelector("input[value='Submit']"));
     }
 
-    public void scrollDown(){
+    public void scrollDown() {
         JavascriptExecutor js = (JavascriptExecutor) wd;
         js.executeScript("window.scrollBy(0,300)");
     }
@@ -52,12 +55,13 @@ public class HelperBase {
             wd.findElement(locator).sendKeys(text);
         }
     }
-public void waitUntilPresent(){
-    new WebDriverWait(wd, 10)
-            .until(ExpectedConditions
-                    .presenceOfElementLocated(By
-                            .xpath("//div[@class='sc-cLQEGU dyjNby']")));
-}
+
+    public void waitUntilPresent() {
+        new WebDriverWait(wd, 10)
+                .until(ExpectedConditions
+                        .presenceOfElementLocated(By
+                                .xpath("//div[@class='sc-cLQEGU dyjNby']")));
+    }
 
     public void attachPhoto(By locator, File file) throws IOException {
         if (file != null) {
@@ -65,18 +69,19 @@ public void waitUntilPresent(){
         }
     }
 
-    public void switchToWindowHandle (int index) throws NullPointerException {
+    public void switchToWindowHandle(int index) throws NullPointerException {
 
         List<String> tabs = new ArrayList<>(wd.getWindowHandles());
-        if(tabs != null && tabs.size()>index &&index>=0)
-        wd.switchTo().window(tabs.get(index));
+        if (tabs != null && tabs.size() > index && index >= 0)
+            wd.switchTo().window(tabs.get(index));
     }
+
     public void pause(int millis) throws InterruptedException {
         Thread.sleep(millis);
     }
 
 
-    public boolean isElementPresent(By locator)  {
+    public boolean isElementPresent(By locator) {
         return wd.findElements(locator).size() > 0;
     }
 
